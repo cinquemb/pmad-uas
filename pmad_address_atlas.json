@@ -1,0 +1,338 @@
+[
+    {
+        "address_id": "SWIND-L1-2025-001",
+        "addressability": {
+            "addressability_class": "II-capable",
+            "addressable": true,
+            "bias_sensitivity": "weak",
+            "reciprocity": false,
+            "restrictions": [
+                "no direct phase actuation"
+            ],
+            "usable_as_anchor": true
+        },
+        "dynamics": {
+            "attractor_type": "low-dimensional chaotic",
+            "dominant_axis_index": 0,
+            "effective_dimensionality": 4.2,
+            "lyapunov_proxy": {
+                "global": 0.11,
+                "stiff_subspace": 0.02
+            },
+            "stiff_axes_count": 1
+        },
+        "object": {
+            "astrophysical_type": "plasma_flow",
+            "driving_mechanism": "solar magnetic forcing",
+            "equilibrium": "far-from-equilibrium",
+            "magnetic_structure": "embedded flux ropes",
+            "mass_scale": "10^12\u201310^13 kg/s",
+            "name": "Solar Wind (L1)",
+            "spatial_extent": "AU-scale",
+            "subtype": "magnetized_turbulent"
+        },
+        "observation": {
+            "cadence_seconds": 1.0,
+            "channels": [
+                "velocity",
+                "density",
+                "B-field"
+            ],
+            "data_product": "in-situ plasma + IMF",
+            "preprocessing": [
+                "detrend",
+                "band-limit"
+            ],
+            "spatial_resolution": "single-point",
+            "time_span_seconds": 86400
+        },
+        "phase_signature": {
+            "dominant_timescales_sec": [
+                10,
+                100,
+                1000
+            ],
+            "embedding": {
+                "dimension": 6,
+                "method": "delay-coordinate",
+                "tau_sec": 10
+            },
+            "phase_coherence": 0.42,
+            "phase_metric": "cosine",
+            "rotation_number": null,
+            "spectral_character": "broadband with scaling"
+        },
+        "pmad_class": "II",
+        "provenance": {
+            "analysis_date_utc": "2025-01-02",
+            "analysis_method": "PMAD delay embedding + PCA stiffness",
+            "author": "C",
+            "code_version": "pmad_sw_v0.3",
+            "status": "validated"
+        },
+        "quality_metrics": {
+            "address_fidelity_score": 0.62,
+            "cross_window_consistency": 0.69,
+            "embedding_robustness": 0.74,
+            "phase_signal_to_noise": 3.1
+        },
+        "role": "correlation_seed",
+        "stability": {
+            "basin_depth": "moderate",
+            "basin_width": "broad",
+            "noise_floor_relation": "well above instrumental noise",
+            "persistence_fraction": 0.78,
+            "relaxation_timescale_sec": 500
+        }
+    },
+    {
+        "address_id": "AIA171-FIL-2025-003",
+        "addressability": {
+            "addressability_class": "II-capable",
+            "addressable": true,
+            "bias_sensitivity": "moderate",
+            "reciprocity": false,
+            "restrictions": [
+                "no external phase injection"
+            ],
+            "usable_as_anchor": true
+        },
+        "dynamics": {
+            "attractor_type": "phase-locked intermittent",
+            "dominant_axis_index": 0,
+            "effective_dimensionality": 3.0,
+            "lyapunov_proxy": {
+                "global": -0.0026,
+                "stiff_subspace": -0.0026
+            },
+            "stiff_axes_count": 2
+        },
+        "object": {
+            "astrophysical_type": "magnetized_plasma",
+            "driving_mechanism": "footpoint stressing + reconnection",
+            "equilibrium": "far-from-equilibrium",
+            "magnetic_structure": "sheared flux tube",
+            "mass_scale": "unknown",
+            "name": "Solar Coronal Filament",
+            "spatial_extent": "10^4\u201310^5 km",
+            "subtype": "coronal_loop_filament"
+        },
+        "observation": {
+            "cadence_seconds": 12,
+            "channels": [
+                "EUV intensity"
+            ],
+            "data_product": "SDO/AIA 171\u00c5",
+            "preprocessing": [
+                "patch extraction",
+                "mean normalization"
+            ],
+            "spatial_resolution": "0.6 arcsec/pixel",
+            "time_span_seconds": 10800
+        },
+        "phase_signature": {
+            "dominant_timescales_sec": [
+                300,
+                900
+            ],
+            "embedding": {
+                "dimension": 3,
+                "method": "delay-coordinate",
+                "tau_sec": 36
+            },
+            "phase_coherence": 0.61,
+            "phase_metric": "cosine",
+            "rotation_number": 0.0505,
+            "spectral_character": "quasi-periodic + intermittent"
+        },
+        "pmad_class": "II",
+        "provenance": {
+            "analysis_date_utc": "2025-01-02",
+            "analysis_method": "PMAD patch embedding + stiffness detection",
+            "author": "C",
+            "code_version": "pmad_aia_v0.2",
+            "status": "validated"
+        },
+        "quality_metrics": {
+            "address_fidelity_score": 0.71,
+            "cross_window_consistency": 0.77,
+            "embedding_robustness": 0.81,
+            "phase_signal_to_noise": 4.6
+        },
+        "role": "correlation_seed",
+        "stability": {
+            "basin_depth": "deep",
+            "basin_width": "moderate",
+            "noise_floor_relation": "photon noise dominated but coherent",
+            "persistence_fraction": 0.84,
+            "relaxation_timescale_sec": 1200
+        }
+    },
+    {
+        "address_id": "HMI-QS-2025-001",
+        "addressability": {
+            "addressability_class": "II-capable",
+            "addressable": true,
+            "bias_sensitivity": "very weak",
+            "reciprocity": false,
+            "restrictions": [
+                "no direct phase actuation",
+                "magnetic field only"
+            ],
+            "usable_as_anchor": true
+        },
+        "dynamics": {
+            "attractor_type": "persistent low-dimensional attractor",
+            "dominant_axis_index": null,
+            "effective_dimensionality": 3.0,
+            "lyapunov_proxy": {
+                "global": -0.06,
+                "stiff_subspace": -1.82
+            },
+            "stiff_axes_count": 3
+        },
+        "object": {
+            "astrophysical_type": "solar_magnetic_field",
+            "driving_mechanism": "photospheric flux anchoring",
+            "equilibrium": "far-from-equilibrium",
+            "magnetic_structure": "quiet-Sun mixed-polarity network",
+            "mass_scale": "negligible",
+            "name": "Quiet Sun Magnetograms (HMI)",
+            "spatial_extent": "10^4\u201310^5 km",
+            "subtype": "photospheric_field"
+        },
+        "observation": {
+            "cadence_seconds": 720,
+            "channels": [
+                "line-of-sight magnetic field"
+            ],
+            "data_product": "SDO/HMI hmi.m_720s",
+            "preprocessing": [
+                "patch extraction",
+                "state compression",
+                "cosine phase filtering"
+            ],
+            "spatial_resolution": "1 arcsec/pixel",
+            "time_span_seconds": 432000
+        },
+        "phase_signature": {
+            "dominant_timescales_sec": [
+                1800,
+                7200,
+                43200
+            ],
+            "embedding": {
+                "dimension": 12,
+                "method": "PMAD state embedding",
+                "tau_sec": 720
+            },
+            "phase_coherence": 0.89,
+            "phase_metric": "cosine",
+            "rotation_number": -0.0049,
+            "spectral_character": "quasi-static with fine recurrence"
+        },
+        "pmad_class": "II",
+        "provenance": {
+            "analysis_date_utc": "2025-01-06",
+            "analysis_method": "PMAD cosine-delta embedding + stiffness PCA",
+            "author": "C",
+            "code_version": "pmad_hmi_v0.1",
+            "status": "validated"
+        },
+        "quality_metrics": {
+            "address_fidelity_score": 0.83,
+            "cross_window_consistency": 0.91,
+            "embedding_robustness": 0.88,
+            "phase_signal_to_noise": 6.2
+        },
+        "role": "primary_phase_anchor",
+        "stability": {
+            "basin_depth": "very deep",
+            "basin_width": "moderate",
+            "noise_floor_relation": "well above instrumental noise",
+            "persistence_fraction": 0.92,
+            "relaxation_timescale_sec": 40000
+        }
+    },
+    {
+        "address_id": "PSR-B1937+21",
+        "addressability": {
+            "addressability_class": "I",
+            "addressable": true,
+            "bias_sensitivity": "negligible",
+            "reciprocity": false,
+            "restrictions": [
+                "no modulation possible"
+            ],
+            "usable_as_anchor": true
+        },
+        "dynamics": {
+            "attractor_type": "limit cycle",
+            "dominant_axis_index": 0,
+            "effective_dimensionality": 1.0,
+            "lyapunov_proxy": {
+                "global": -1e-06,
+                "stiff_subspace": -1e-06
+            },
+            "stiff_axes_count": 0
+        },
+        "object": {
+            "astrophysical_type": "compact_object",
+            "driving_mechanism": "rotational inertia",
+            "equilibrium": "metastable",
+            "magnetic_structure": "dipolar",
+            "mass_scale": "1.4 solar masses",
+            "name": "PSR B1937+21",
+            "spatial_extent": "10 km",
+            "subtype": "millisecond_pulsar"
+        },
+        "observation": {
+            "cadence_seconds": 0.001,
+            "channels": [
+                "pulse arrival time"
+            ],
+            "data_product": "radio timing residuals",
+            "preprocessing": [
+                "barycentric correction"
+            ],
+            "spatial_resolution": "N/A",
+            "time_span_seconds": 31000000.0
+        },
+        "phase_signature": {
+            "dominant_timescales_sec": [
+                0.0015578
+            ],
+            "embedding": {
+                "dimension": 1,
+                "method": "phase unfolding",
+                "tau_sec": null
+            },
+            "phase_coherence": 0.999999,
+            "phase_metric": "cosine",
+            "rotation_number": 1.0,
+            "spectral_character": "delta-function"
+        },
+        "pmad_class": "I",
+        "provenance": {
+            "analysis_date_utc": "2025-01-02",
+            "analysis_method": "timing model",
+            "author": "C",
+            "code_version": "pta_standard",
+            "status": "reference"
+        },
+        "quality_metrics": {
+            "address_fidelity_score": 0.95,
+            "cross_window_consistency": 0.99,
+            "embedding_robustness": 0.99,
+            "phase_signal_to_noise": 1000000.0
+        },
+        "role": "passive_phase_reference",
+        "stability": {
+            "basin_depth": "extreme",
+            "basin_width": "narrow",
+            "noise_floor_relation": "orders above noise",
+            "persistence_fraction": 0.999999,
+            "relaxation_timescale_sec": 1000000000.0
+        }
+    }
+]
